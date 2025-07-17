@@ -277,11 +277,11 @@
   </div>
 
   <div class="secret-message" id="secret-message">
-    <div class="message-title">congrats you chived nothing ?</div>
+    <div class="message-title">congrats you achived nothing ? </div>
     <div class="message-sub">
-       not yet pal ... not yet <br>
-       it will be there soon <br>
-     just wait  ;)
+      not yet pal ... not yet <br>
+      it will be there soon <br>
+      just wait  ;)
     </div>
   </div>
 
@@ -318,7 +318,7 @@
     const successMessage = document.getElementById('success-message');
     const accessDenied = document.getElementById('access-denied');
     const dumbMessage = document.getElementById('dumb-message');
-    
+
     nameInput.focus();
     nameInput.placeholder = '';
 
@@ -334,9 +334,10 @@
         const userName = nameInput.value.trim();
         if (userName) {
           nameInput.style.display = 'none';
-          
+
           if (userName === "HIM") {
             clearInterval(spinnerInterval);
+            inputPrompt.style.display = 'none'; // << FIXED LINE ADDED
             secretMessage.style.display = 'block';
           } else {
             inputPrompt.innerHTML = `
@@ -358,7 +359,7 @@
               document.getElementById('user-name').textContent = userName;
               document.getElementById('user-id').textContent = generateRandomID();
               infoBox.style.display = 'block';
-              
+
               setTimeout(() => {
                 infoBox.style.display = 'none';
                 riddleContainer.style.display = 'block';
@@ -374,7 +375,7 @@
       if (e.key === 'Enter') {
         const answer = riddleInput.value.trim();
         const riddleText = document.querySelector('.riddle-text');
-        
+
         accessDenied.style.display = 'none';
         successMessage.style.display = 'none';
         dumbMessage.style.display = 'none';
@@ -395,7 +396,7 @@
       }
     });
 
-    document.querySelector('.riddle-text').originalHTML = 
+    document.querySelector('.riddle-text').originalHTML =
       document.querySelector('.riddle-text').innerHTML;
   </script>
 </body>
